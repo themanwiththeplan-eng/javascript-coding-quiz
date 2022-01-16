@@ -8,8 +8,53 @@
 .start{
     height: 40px;
     width: 90px;
+    
 }
 .timer-div{
     display:flex;
     float: right;
+}
+#quiz{
+    display:flex;
+}
+.quiz-intro{
+    display:flex;
+    flex-direction: column;
+    margin: auto;
+    position:absolute;
+    top: 30%;
+    left: 30%;
+}
+.question{
+    display:none;
+    flex-direction:column;
+    justify-content: space-evenly;
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+.answerOne{
+    width: fit-content;
+    height: fit-content;
+    margin: 5px;
+    justify-content: space-evenly;
+}
+.answerTwo{
+    width: fit-content;
+    height: fit-content;
+    margin: 5px;
+    justify-content: space-evenly;
+}
+.answerThree{
+    width: fit-content;
+    height: fit-content;
+    margin: 5px;
+    justify-content: space-evenly;
+}
+.answerFour{
+    width: fit-content;
+    height: fit-content;
+    margin: 5px;
+    justify-content: space-evenly;
 }
