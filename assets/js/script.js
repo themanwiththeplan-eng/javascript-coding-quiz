@@ -1,5 +1,6 @@
 var highestScores = document.querySelector('.highest-scores');
-var emptyHigh = {}
+
+
 var goBackBtn = document.querySelector('.goBack');
 var clearHighscores = document.querySelector('.clear');
 var highscores = document.querySelector('.highscores');
@@ -20,13 +21,15 @@ startEl.addEventListener('click', startQuiz);
 var score = 0;
 var questionAsk = 0;
 var index = 0;
+var timerDecrement;
+
 
 function startQuiz(){
    
     
     
     
-    var timerDecrement = setInterval(function(){
+     timerDecrement = setInterval(function(){
     
     
         if(count > 0){
@@ -35,6 +38,7 @@ function startQuiz(){
         }else{
             clearInterval(timerDecrement);
             timerEl.textContent = `Your quiz is over, your score was ${score}`;
+            saveScore();
         }
     }, 1000)
     
@@ -62,12 +66,14 @@ oneEl.addEventListener('click',function(){
     }
     if(questionAsk > 4){
         saveScore();
+        
     }
 })
 twoEl.addEventListener('click', function(){
     wrongAnswer();
     if(questionAsk > 4){
         saveScore();
+        
     }
 })
 threeEl.addEventListener('click', function(){
@@ -75,9 +81,11 @@ threeEl.addEventListener('click', function(){
         rightAnswer();
     }else{
         wrongAnswer();
+       
     }
     if(questionAsk > 4){
         saveScore();
+        
     }
 })
 fourEl.addEventListener('click', function(){
@@ -88,6 +96,7 @@ fourEl.addEventListener('click', function(){
     }
     if(questionAsk > 4){
         saveScore();
+        clearInterval(timerDecrement);
     }
 })
 
@@ -101,7 +110,7 @@ function viewHighscore(){
     document.getElementById('questions').style.display = "none";
 
     document.getElementById('highscoreForm').style.display = "flex";
-    highestScores.textContent = emptyHigh;
+    
 }
 
 goBackBtn.addEventListener('click', goBack);
@@ -111,14 +120,33 @@ function goBack(){
     
     document.getElementById('highscoreForm').style.display = "none";
 }
-function clearHighscores(){
+clearHighscores.addEventListener('click', clearHighscore);
+function clearHighscore(){
     localStorage.clear();
+    
 }
 function saveScore(){
-    var id = prompt(`What are your initials?`)
-    emptyHigh.assign(id, score);
-    highestScores.textContent = emptyHigh;
-    localStorage.setItem('Highscores', JSON.stringify(emptyHigh));
+    var key = prompt("Game over! What are your initials?");
+    var emptyHigh = {};
+    emptyHigh[key] = score;
+    console.log(`${score}`);
+    localStorage.setItem(key, score);
+    
+    document.getElementById('quiz').style.display = "none";
+    document.getElementById('starter').style.display = "none";
+    document.getElementById('questions').style.display = "none";
+
+    document.getElementById('highscoreForm').style.display = "flex";
+    clearInterval(timerDecrement);
+    timerEl.textContent = ``;
+    var t = document.createElement('li')
+    t.style.fontSize = "40px";
+    highestScores.appendChild(t);
+    t.textContent = key + " " + score;
+    
+    clearHighscores.addEventListener('click', function(){
+        highestScores.removeChild(t);
+    })
 }
 function rightAnswer(){
     score = score + 5;

@@ -62,17 +62,15 @@
     position:absolute;
     display: none;
     margin: auto;
-    top: 50%;
-    left: 50%;
     flex-direction: column;
+    top: 50%;
+    left: 38%;
 }
 .xScore{
     margin: auto;
-    top: 50%;
-    left: 50%;
     text-align:center;
     size: 20px;
-    font-size: large;
+    font-size: 100px;
 }
 .clear{
     justify-content: space-evenly;
@@ -84,9 +82,8 @@
 }
 .highest-scores{
     margin: auto;
+    position: relative;
     top: 50%;
-    left: 50%;
     text-align:center;
     size: 20px;
-    font-size: medium;
 }
