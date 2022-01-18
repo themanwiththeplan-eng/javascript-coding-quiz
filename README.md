@@ -22,4 +22,4 @@ As described, this is a coding quiz that will take you through and ask you five 
 
 ## Screenshot
 
-![Image of Deployed Application](js.JPG)
+![Image of Deployed Application](/assets/img/js.JPG)
