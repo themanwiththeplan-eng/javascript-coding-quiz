@@ -129,7 +129,7 @@ function viewHighscore(){
 
 goBackBtn.addEventListener('click', goBack);
 function goBack(){
-    window.location.reload();
+    document.location.reload();
 }
 clearHighscores.addEventListener('click', clearHighscore);
 function clearHighscore(){

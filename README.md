@@ -12,3 +12,13 @@ I made this application for my course as we were learning about web API's. I fou
 
 As described, this is a coding quiz that will take you through and ask you five questions. When those 5 questions are up, it will stop you and prompt you to enter your initials. Then, it will display your highscore.
 
+---
+
+## Link to Deployed Application
+
+[JS Coding Quiz](https://themanwiththeplan-eng.github.io/javascript-coding-quiz/)
+
+---
+
+## Screenshot
+
