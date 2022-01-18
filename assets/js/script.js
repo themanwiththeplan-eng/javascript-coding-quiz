@@ -1,5 +1,5 @@
 var highestScores = document.querySelector('.highest-scores');
-
+var key;
 
 var goBackBtn = document.querySelector('.goBack');
 var clearHighscores = document.querySelector('.clear');
@@ -110,8 +110,22 @@ function viewHighscore(){
     document.getElementById('questions').style.display = "none";
 
     document.getElementById('highscoreForm').style.display = "flex";
+    var x = document.createElement('li');
+    x.style.fontSize = "40px";
+    
+    x.textContent = localStorage.getItem(key);
+   
+    for(i = 0; i < localStorage.length; i++){
+        x;
+        highestScores.appendChild(x);
+        x.textContent = localStorage.getItem(localStorage.key(i));
+    }
+    clearHighscores.addEventListener('click', function(){
+        highestScores.removeChild(x);
+    })
     
 }
+
 
 goBackBtn.addEventListener('click', goBack);
 function goBack(){
@@ -126,11 +140,11 @@ function clearHighscore(){
     
 }
 function saveScore(){
-    var key = prompt("Game over! What are your initials?");
+    key = prompt("Game over! What are your initials?");
     var emptyHigh = {};
     emptyHigh[key] = score;
     console.log(`${score}`);
-    localStorage.setItem(key, score);
+    localStorage.setItem(key, JSON.stringify(emptyHigh));
     
     document.getElementById('quiz').style.display = "none";
     document.getElementById('starter').style.display = "none";
@@ -143,10 +157,15 @@ function saveScore(){
     t.style.fontSize = "40px";
     highestScores.appendChild(t);
     t.textContent = key + " " + score;
+    if(key.length < 1 || key == null){
+        window.location.reload();
+    }
     
     clearHighscores.addEventListener('click', function(){
         highestScores.removeChild(t);
     })
+   
+    
 }
 function rightAnswer(){
     score = score + 5;
