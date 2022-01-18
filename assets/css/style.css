@@ -58,3 +58,35 @@
     margin: 5px;
     justify-content: space-evenly;
 }
+#highscoreForm{
+    position:absolute;
+    display: none;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    flex-direction: column;
+}
+.xScore{
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    text-align:center;
+    size: 20px;
+    font-size: large;
+}
+.clear{
+    justify-content: space-evenly;
+    margin: 5px;
+}
+.goBack{
+    justify-content: space-evenly;
+    margin: 5px;
+}
+.highest-scores{
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    text-align:center;
+    size: 20px;
+    font-size: medium;
+}
