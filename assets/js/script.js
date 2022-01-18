@@ -129,10 +129,7 @@ function viewHighscore(){
 
 goBackBtn.addEventListener('click', goBack);
 function goBack(){
-    document.getElementById('quiz').style.display = "flex";
-    document.getElementById('starter').style.display = "flex";
-    
-    document.getElementById('highscoreForm').style.display = "none";
+    window.location.reload();
 }
 clearHighscores.addEventListener('click', clearHighscore);
 function clearHighscore(){
