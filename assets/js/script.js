@@ -137,7 +137,7 @@ function clearHighscore(){
     
 }
 function saveScore(){
-    key = prompt("Game over! What are your initials?");
+    key = prompt(`Game over! Your score was ${score}! What are your initials?`);
     var emptyHigh = {};
     emptyHigh[key] = score;
     console.log(`${score}`);
@@ -157,6 +157,7 @@ function saveScore(){
     if(key.length < 1 || key == null){
         window.location.reload();
     }
+    rightWrong.textContent = ``;
     
     clearHighscores.addEventListener('click', function(){
         highestScores.removeChild(t);
