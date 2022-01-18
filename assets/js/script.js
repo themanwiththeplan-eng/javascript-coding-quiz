@@ -137,6 +137,7 @@ function clearHighscore(){
     
 }
 function saveScore(){
+    rightWrong.textContent = "";
     key = prompt(`Game over! Your score was ${score}! What are your initials?`);
     var emptyHigh = {};
     emptyHigh[key] = score;
@@ -157,7 +158,7 @@ function saveScore(){
     if(key.length < 1 || key == null){
         window.location.reload();
     }
-    rightWrong.textContent = ``;
+    
     
     clearHighscores.addEventListener('click', function(){
         highestScores.removeChild(t);
@@ -166,7 +167,7 @@ function saveScore(){
     
 }
 function rightAnswer(){
-    score = score + 5;
+    score = 5 + score;
     questionAsked.textContent = questionArr[++questionAsk];
     index++;
     oneEl.innerHTML = answers[index][1];
