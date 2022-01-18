@@ -110,7 +110,7 @@ function viewHighscore(){
     document.getElementById('questions').style.display = "none";
 
     document.getElementById('highscoreForm').style.display = "flex";
-    
+    localStorage.getItem(key);
 }
 
 goBackBtn.addEventListener('click', goBack);
