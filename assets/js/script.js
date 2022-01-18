@@ -127,10 +127,10 @@ function viewHighscore(){
 }
 
 
-goBackBtn.addEventListener('click', goBack);
-function goBack(){
-    document.location.reload();
-}
+goBackBtn.addEventListener('click', function(){
+    window.location.reload();
+});
+
 clearHighscores.addEventListener('click', clearHighscore);
 function clearHighscore(){
     localStorage.clear();
